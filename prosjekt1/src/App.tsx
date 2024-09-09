@@ -4,7 +4,7 @@ import Pokemon from './components/Pokemon'
 import Search from './components/Search'
 
 function App() {
-  const [name, setName] = useState<string>('pikachu')
+  const [name, setName] = useState<string>('ditto')
 
   return (
     <>
