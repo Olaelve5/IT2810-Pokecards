@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    gap: 1rem;
+}
+
+.input {
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    background-color: white;
+    border: none;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
+.button:focus {
+    outline: none;
+}
