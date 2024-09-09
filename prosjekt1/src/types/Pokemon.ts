@@ -1,22 +1,29 @@
 type StatDetail = {
-    name: string;
-    url: string;
+  name: string;
+  url: string;
 };
 
 type Stat = {
-    base_stat: number;
-    effort: number;
-    stat: StatDetail;
+  base_stat: number;
+  effort: number;
+  stat: StatDetail;
 };
 
 type Sprites = {
-    front_default: string;
+  front_default: string;
+};
+
+type Images = {
+  small: string;
+  large: string;
 };
 
 export type PokemonType = {
-    id: number;
-    name: string;
-    stats: Stat[];
-    sprites: Sprites;
-    // Add other properties as needed
+  id: string;
+  name: string;
+  stats: Stat[];
+  sprites: Sprites;
+  images: Images;
+  hp: number;
+  // Add other properties as needed
 };
