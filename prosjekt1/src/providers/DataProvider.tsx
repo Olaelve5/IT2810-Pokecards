@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { DataContext } from "../contexts/DataContext";
+import { PokemonType } from "../types/Pokemon";
 
 const DataProvider = ({ children }: { children: React.ReactNode }) => {
-    const [name, setName] = useState<string>('ditto');
-    const [id, setId] = useState<string>('base3-3');
+    const [activePokemon, setActivePokemon] = useState<PokemonType | null>(null);
 
     return (
-        <DataContext.Provider value={{ name, id, setName, setId }}>
+        <DataContext.Provider value={{ activePokemon, setActivePokemon}}>
             {children}
         </DataContext.Provider>
     );

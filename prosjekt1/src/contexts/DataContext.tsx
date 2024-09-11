@@ -1,10 +1,9 @@
 import { createContext, useContext } from "react";
+import { PokemonType } from '../types/Pokemon';
 
 interface DataContextProps {
-    name: string;
-    id: string;
-    setName: (name: string) => void;
-    setId: (id: string) => void;
+    activePokemon: PokemonType | null;
+    setActivePokemon: (pokemon: PokemonType) => void;
 }
 
 export const DataContext = createContext<DataContextProps | undefined>(undefined);

@@ -1,6 +1,6 @@
 import './App.css'
 import { LeftButton, RightButton } from './components/buttons/SideButtons'
-import Pokemon from './components/Pokemon'
+import PokemonCard from './components/PokemonCard'
 import Search from './components/Search'
 import DataProvider from './providers/DataProvider'
 
@@ -10,9 +10,9 @@ function App() {
     <>
       <DataProvider>
         <Search />
-        <div>
+        <div className='mainPokemonContainer'>
           <LeftButton />
-          <Pokemon />
+          <PokemonCard />
           <RightButton />
         </div>
       </DataProvider>

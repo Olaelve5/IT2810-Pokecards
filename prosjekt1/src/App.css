@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+
+.mainPokemonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
