@@ -1,15 +1,21 @@
-import { useState } from 'react'
 import './App.css'
+import { LeftButton, RightButton } from './components/buttons/SideButtons'
 import Pokemon from './components/Pokemon'
 import Search from './components/Search'
+import DataProvider from './providers/DataProvider'
 
 function App() {
-  const [name, setName] = useState<string>('ditto')
 
   return (
     <>
-      <Search setName={setName}/>
-      <Pokemon name={name}/>
+      <DataProvider>
+        <Search />
+        <div>
+          <LeftButton />
+          <Pokemon />
+          <RightButton />
+        </div>
+      </DataProvider>
     </>
   )
 }

@@ -4,7 +4,7 @@ const url = 'https://api.pokemontcg.io/v2/cards?q=name:';
 
 export const fetchPokemon = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType> => {
   const [id] = queryKey;
-  const res = await fetch(url + id, {
+  const res = await fetch(url + id + "&pageSize=5", {
     headers: {
       'X-Api-Key': ApiKey,
     },

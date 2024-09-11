@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import classes from '../styles/Search.module.css';
+import { useDataContext } from '../contexts/DataContext';
 
-interface SearchProps {
-    setName: (name: string) => void;
-}
-
-const Search: React.FC<SearchProps> = ({ setName }) => {
+const Search = () => {
     const [input, setInput] = useState<string>('');
+    const { setName } = useDataContext();
 
     const handleClick = () => {
         setName(input);
