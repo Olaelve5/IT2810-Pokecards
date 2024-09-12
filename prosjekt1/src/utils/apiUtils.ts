@@ -42,6 +42,9 @@ export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }
   const data = await res.json();
   return data.data.map((pokemon: PokemonType) => {
     const {name, id, types, images} = pokemon;
+    if (!types) {
+      return {name, id, types: ['none'], images};
+    }
     return {name, id, types, images};
   });
 };

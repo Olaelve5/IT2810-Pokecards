@@ -30,11 +30,11 @@ const MainTable: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            if (query) {
-                const { data, status } = await refetch();
-                if (status === 'success' && data) {
-                    setPokemons(data as PokemonType[]);
-                }
+            const { data, status } = await refetch();
+            if (status === 'success' && data) {
+                setPokemons(data as PokemonType[]);
+            } else {
+                console.error('Failed to fetch data', status);
             }
         };
 
@@ -44,9 +44,13 @@ const MainTable: React.FC = () => {
     return (
         <div>
             <TypeFilter setType={setType} />
-            {pokemons?.map((pokemon: PokemonType) => (
-                <Row key={pokemon.id} {...pokemon} />
-            ))}
+            <table>
+                <thead>
+                    {pokemons?.map((pokemon: PokemonType) => (
+                        <Row key={pokemon.id} {...pokemon} />
+                    ))}
+                </thead>
+            </table>
         </div>
     );
 };
