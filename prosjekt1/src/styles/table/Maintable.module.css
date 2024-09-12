@@ -1,0 +1,38 @@
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-top: white 1px solid;
+    margin-top: 70px;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px;
+}
+
+.cell {
+    background-color: #213547;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+.grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+.grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+}
+}

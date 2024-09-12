@@ -1,58 +1,59 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { fetchPokemonsBySearch } from '../../utils/apiUtils'; // Adjust the import path as needed
-import TypeFilter from './TypeFilter'; // Adjust the import path as needed
-import Row from './Row'; // Adjust the import path as needed
-import { PokemonType } from '../../types/Pokemon'; // Adjust the import path as needed
+import { fetchPokemonsBySearch } from '../../utils/apiUtils';
+import TypeFilter from './TypeFilter';
+import Row from './Row';
+import { PokemonType } from '../../types/Pokemon';
+import classes from '../../styles/table/MainTable.module.css';
 
 const MainTable: React.FC = () => {
-    const [type, setType] = useState<string>('');
-    const [pokemons, setPokemons] = useState<PokemonType[]>([]);
-    const [query, setQuery] = useState<string>('');
+  const [type, setType] = useState<string>('');
+  const [pokemons, setPokemons] = useState<PokemonType[]>([]);
+  const [query, setQuery] = useState<string>('');
 
-    const { refetch } = useQuery({
-        queryKey: [query],
-        queryFn: fetchPokemonsBySearch,
-        enabled: false, // Disable automatic query execution
-    });
+  const { refetch } = useQuery({
+    queryKey: [query],
+    queryFn: fetchPokemonsBySearch,
+    enabled: false,
+  });
 
-    const queryBuilder = useCallback(() => {
-        if (type) {
-            setQuery(`types:${type.toLowerCase()}`);
-        } else {
-            setQuery('');
-        }
-    }, [type]);
+  const queryBuilder = useCallback(() => {
+    if (type) {
+      setQuery(`types:${type.toLowerCase()}`);
+    } else {
+      setQuery('');
+    }
+  }, [type]);
 
-    useEffect(() => {
-        queryBuilder();
-    }, [type, queryBuilder]);
+  useEffect(() => {
+    queryBuilder();
+  }, [type, queryBuilder]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const { data, status } = await refetch();
-            if (status === 'success' && data) {
-                setPokemons(data as PokemonType[]);
-            } else {
-                console.error('Failed to fetch data', status);
-            }
-        };
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, status } = await refetch();
+      if (status === 'success' && data) {
+        setPokemons(data as PokemonType[]);
+      } else {
+        console.error('Failed to fetch data', status);
+      }
+    };
 
-        fetchData();
-    }, [query, refetch]);
+    fetchData();
+  }, [query, refetch]);
 
-    return (
-        <div>
-            <TypeFilter setType={setType} />
-            <table>
-                <thead>
-                    {pokemons?.map((pokemon: PokemonType) => (
-                        <Row key={pokemon.id} {...pokemon} />
-                    ))}
-                </thead>
-            </table>
-        </div>
-    );
+  return (
+    <div className={classes.tableContainer}>
+      <TypeFilter setType={setType} />
+      <div className={classes.grid}>
+        {pokemons?.map((pokemon: PokemonType) => (
+          <div key={pokemon.id} className={classes.cell}>
+            <Row {...pokemon} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default MainTable;
