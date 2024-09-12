@@ -30,3 +30,19 @@ export const fetchPokemonById = async ({ queryKey }: { queryKey: string[] }): Pr
   return {name, id, types, images};
 };
 
+
+export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType[]> => {
+  const query = queryKey + set + "&pageSize=10";
+  const res = await fetch(url + query, {
+    headers: {
+      'X-Api-Key': ApiKey,
+    },
+  });
+
+  const data = await res.json();
+  return data.data.map((pokemon: PokemonType) => {
+    const {name, id, types, images} = pokemon;
+    return {name, id, types, images};
+  });
+};
+
