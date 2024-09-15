@@ -1,20 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     cursor: pointer;
-    ;
+}
+
+.container > h4 {
+    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 .image {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.container div {
-    margin: 5px 0;
+    width: 150px;
 }

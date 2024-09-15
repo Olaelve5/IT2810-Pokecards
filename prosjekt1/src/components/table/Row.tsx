@@ -18,10 +18,8 @@ const Row: React.FC<PokemonType> = (data) => {
 
   return (
     <div onClick={handleClick} className={classes.container}>
+      <h4>{localData.name}</h4>
       <img src={localData.images.small} alt={localData.name} className={classes.image} />
-      <div>{localData.name}</div>
-      <div>{localData.id}</div>
-      <div>{localData.types[0]}</div>
     </div>
   );
 };

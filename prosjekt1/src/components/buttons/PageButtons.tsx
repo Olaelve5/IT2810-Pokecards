@@ -11,7 +11,7 @@ const PageButtons = ({page, setPage, totalPokemonCount}: PageButtonsProps) => {
     const [totalPages, setTotalPages] = useState<number>(0);
 
     useEffect(() => {
-        setTotalPages(Math.ceil(totalPokemonCount / 10));
+        setTotalPages(Math.ceil(totalPokemonCount / 12));
     }, [totalPokemonCount]);
 
     if (totalPokemonCount === 0) {

@@ -1,4 +1,4 @@
-import classes from '../../styles/table/TypeFilter.module.css';
+import classes from '../../../styles/table/TypeFilter.module.css';
 
 const types = [
     'Colorless',

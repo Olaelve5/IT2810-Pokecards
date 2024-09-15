@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    align-items: end;
+}
+
+.searchButton {
+    background-color: #309333;
+    color: white;
+    height: fit-content;
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+}
