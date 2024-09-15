@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IconStar } from '@tabler/icons-react';
-import classes from '../../styles/FavouriteButton.module.css';
+import classes from '../../styles/buttons/FavouriteButton.module.css';
 
 interface FavouriteButtonProps {
   pokemonId: string;

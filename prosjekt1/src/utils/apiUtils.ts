@@ -2,10 +2,10 @@ import { PokemonType } from '../types/Pokemon';
 
 const ApiKey = '81667daf-d49d-4aae-8613-2a3c0347cc4b';
 const url = 'https://api.pokemontcg.io/v2/cards?q=';
-const set = ' set.id:ex6';
+const set = 'set.id:ex6';
 
 export const fetchPokemonByName = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType> => {
-  const query = 'name:' + queryKey + set + '&pageSize=5';
+  const query =  set + 'name:' + queryKey + '&pageSize=5';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -30,8 +30,14 @@ export const fetchPokemonById = async ({ queryKey }: { queryKey: string[] }): Pr
   return { name, id, types, images };
 };
 
-export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType[]> => {
-  const query = queryKey + set + '&pageSize=9';
+
+interface FetchPokemonsBySearch {
+  pokemons: PokemonType[];
+  count: number;
+}
+
+export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }): Promise<FetchPokemonsBySearch> => {
+  const query = set + queryKey + '&pageSize=10';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -39,11 +45,14 @@ export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }
   });
 
   const data = await res.json();
-  return data.data.map((pokemon: PokemonType) => {
+  const totalCount = data.totalCount;
+  const pokemons = data.data.map((pokemon: PokemonType) => {
     const { name, id, types, images } = pokemon;
     if (!types) {
       return { name, id, types: ['none'], images };
     }
     return { name, id, types, images };
   });
+
+  return { pokemons: pokemons, count: totalCount };
 };

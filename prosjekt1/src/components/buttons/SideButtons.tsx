@@ -1,5 +1,5 @@
 import { IconCircleArrowLeft, IconCircleArrowRight } from '@tabler/icons-react';
-import classes from '../../styles/SideButtons.module.css';
+import classes from '../../styles/buttons/SideButtons.module.css';
 import { useDataContext } from '../../contexts/DataContext';
 import { useQuery } from '@tanstack/react-query';
 import { fetchPokemonById } from '../../utils/apiUtils';

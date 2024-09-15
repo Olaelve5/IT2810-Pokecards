@@ -4,6 +4,8 @@ import { PokemonType } from '../types/Pokemon';
 interface DataContextProps {
     activePokemon: PokemonType | null;
     setActivePokemon: (pokemon: PokemonType) => void;
+    tablePokemons: PokemonType[];
+    setTablePokemons: (pokemons: PokemonType[]) => void;
 }
 
 export const DataContext = createContext<DataContextProps | undefined>(undefined);
