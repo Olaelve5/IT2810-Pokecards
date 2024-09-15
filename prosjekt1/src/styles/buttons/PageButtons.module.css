@@ -35,3 +35,20 @@
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+.textContainer {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.textContainer span:nth-child(1) {
+    color: white;
+    font-weight: 600;
+}
+
+.textContainer span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.474);
+    font-weight: 600;
+}

@@ -21,7 +21,10 @@ const PageButtons = ({page, setPage, totalPokemonCount}: PageButtonsProps) => {
     return (
         <div className={classes.container}>
             <button onClick={() => setPage(page - 1)} disabled={page === 1} className={classes.button}>Forrige</button>
-            <span>{page}</span>
+            <div className={classes.textContainer}>
+                <span>{page}</span>
+                <span>/ {totalPages}</span>
+            </div>
             <button onClick={() => setPage(page + 1)} disabled={page >= totalPages} className={classes.button}>Neste</button>
         </div>
     );
