@@ -14,6 +14,7 @@ const Row: React.FC<PokemonType> = (data) => {
   const handleClick = () => {
     if (activePokemon && activePokemon.id === localData.id) return;
     setActivePokemon(localData);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

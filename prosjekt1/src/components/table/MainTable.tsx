@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import {useState} from 'react';
 import Row from './Row';
 import { PokemonType } from '../../types/Pokemon';
 import { useDataContext } from '../../contexts/DataContext';

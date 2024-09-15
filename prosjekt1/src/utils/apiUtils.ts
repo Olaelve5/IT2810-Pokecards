@@ -38,7 +38,7 @@ interface FetchPokemonsBySearch {
 
 export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }): Promise<FetchPokemonsBySearch> => {
   const [filters, pageQuery] = queryKey;
-  const query = `${set}${filters}${pageQuery}&pageSize=12`;
+  const query = `${set}${filters}${pageQuery}&pageSize=12&orderBy=number`;
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
