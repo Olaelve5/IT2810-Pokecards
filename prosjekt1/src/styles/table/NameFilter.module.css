@@ -4,6 +4,7 @@
     gap: 0.2rem;
     justify-content: center;
     text-align: left;
+    position: relative;
 }
 
 .input {
@@ -19,4 +20,13 @@
 
 .input:focus {
     outline: none;
+}
+
+.xIcon {
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.3rem;
+    z-index: 10;
+    color: rgb(50, 50, 50);
+    cursor: pointer;
 }

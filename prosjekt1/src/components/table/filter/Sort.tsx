@@ -8,12 +8,13 @@ const sortOptions = [
 ]
 
 interface SortProps {
+    orderBy: string;
     setOrderBy: (orderBy: string) => void;
     sortDirection: 'asc' | 'desc';
     setSortDirection: (sortDirection: 'asc' | 'desc') => void;
 }
 
-const Sort = ({setOrderBy, sortDirection, setSortDirection}: SortProps) => {
+const Sort = ({setOrderBy, sortDirection, setSortDirection, orderBy}: SortProps) => {
 
     const handleSortDirection = () => {
         if (sortDirection === 'asc') {
@@ -31,7 +32,7 @@ const Sort = ({setOrderBy, sortDirection, setSortDirection}: SortProps) => {
         <div className={classes.container}>
             <p>Sort by</p>
             <div className={classes.buttonContainer}>
-                <select onChange={handleChange}>
+                <select onChange={handleChange} value={orderBy}>
                     {sortOptions.map((option) => (
                         <option key={option} value={option}>{option}</option>
                     ))}

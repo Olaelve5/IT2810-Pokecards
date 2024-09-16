@@ -17,10 +17,9 @@ const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
     const [orderBy, setOrderBy] = useState<string>('ID');
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
-
     useEffect(() => {
         setPage(1);
-      }, [type, setPage]);
+      }, [type, setPage, name]);
 
     return (
         <div className={classes.container}>
@@ -32,9 +31,9 @@ const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
             setTotalPokemonCount={setTotalPokemonCount}
             sortDirection={sortDirection}
             />
-            <NameFilter setName={setName}/>
-            <TypeFilter setType={setType}/>
-            <Sort setOrderBy={setOrderBy} sortDirection={sortDirection} setSortDirection={setSortDirection}/>
+            <NameFilter name={name} setName={setName}/>
+            <TypeFilter type={type} setType={setType}/>
+            <Sort orderBy={orderBy} setOrderBy={setOrderBy} sortDirection={sortDirection} setSortDirection={setSortDirection}/>
         </div>
     )
 }

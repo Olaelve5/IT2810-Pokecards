@@ -38,7 +38,6 @@ const FilterController = ({...props}: FilterControllerProps) => {
         if(name) {
             newQuery += ` name:${name}*`;
         }
-        console.log(newQuery);
         setQuery(newQuery);
     }, [type, name]);
 

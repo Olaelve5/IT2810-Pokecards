@@ -11,14 +11,19 @@ const types = [
 ];
 
 interface TypeFilterProps {
+    type: string;
     setType: (type: string) => void;
 }
 
-const TypeFilter = ({setType}: TypeFilterProps) => {
+const TypeFilter = ({setType, type}: TypeFilterProps) => {
     return (
         <div className={classes.container}>
             <p>Type </p>
-            <select onChange={(e) => setType(e.target.value)} className={classes.select}>
+            <select 
+            onChange={(e) => setType(e.target.value)} 
+            className={classes.select}
+            value={type}
+            >
                 <option value="">All</option>
                 {types.map((type) => (
                     <option key={type} value={type}>{type}</option>
