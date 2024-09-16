@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+}
+
+.input {
+    border-radius: 4px;
+    border: none;
+    padding: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #ffffff;
+    color:black;
+    width: 127px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.xIcon {
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.3rem;
+    z-index: 10;
+    color: rgb(50, 50, 50);
+    cursor: pointer;
+}

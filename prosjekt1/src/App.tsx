@@ -16,6 +16,7 @@ function App() {
           <PokemonCard />
           <RightButton />
         </div>
+        <MainTable />
       </DataProvider>
     </>
   );
