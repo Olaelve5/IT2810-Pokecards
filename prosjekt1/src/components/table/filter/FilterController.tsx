@@ -9,20 +9,21 @@ interface FilterControllerProps {
     page: number;
     setTotalPokemonCount: (count: number) => void;
     name: string;
+    orderBy: string;
+    sortDirection: 'asc' | 'desc';
 }
 
 const FilterController = ({...props}: FilterControllerProps) => {
     const {setTablePokemons} = useDataContext();
 
-    const {type, page, 
-        setTotalPokemonCount, 
-        name} = props;
+    const {type, page, orderBy, sortDirection,
+        setTotalPokemonCount, name} = props;
 
     const [query, setQuery] = useState<string>('');
     const [pageQuery, setPageQuery] = useState<string>('');
 
     const { refetch } = useQuery({
-        queryKey: [query, pageQuery],
+        queryKey: [query, pageQuery, orderBy, sortDirection],
         queryFn: fetchPokemonsBySearch,
         enabled: false,
     });
@@ -68,7 +69,7 @@ const FilterController = ({...props}: FilterControllerProps) => {
           fetchData();
         }
         
-    }, [query, pageQuery, refetch, setTablePokemons, setTotalPokemonCount]);
+    }, [query, sortDirection, pageQuery, refetch, setTablePokemons, setTotalPokemonCount, orderBy]);
 
     return null;
 }

@@ -3,6 +3,7 @@ import TypeFilter from "./TypeFilter";
 import FilterController from "./FilterController";
 import classes from '../../../styles/table/MainFilter.module.css';
 import NameFilter from "./NameFilter";
+import Sort from "./Sort";
 
 interface MainFilterProps {
     page: number;
@@ -13,6 +14,8 @@ interface MainFilterProps {
 const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
     const [type, setType] = useState<string>('');
     const [name, setName] = useState<string>('');
+    const [orderBy, setOrderBy] = useState<string>('ID');
+    const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
 
     useEffect(() => {
@@ -25,10 +28,13 @@ const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
             type={type} 
             page={page}
             name={name}
+            orderBy={orderBy}
             setTotalPokemonCount={setTotalPokemonCount}
+            sortDirection={sortDirection}
             />
             <NameFilter setName={setName}/>
             <TypeFilter setType={setType}/>
+            <Sort setOrderBy={setOrderBy} sortDirection={sortDirection} setSortDirection={setSortDirection}/>
         </div>
     )
 }
