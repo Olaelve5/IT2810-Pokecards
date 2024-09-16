@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import HpFilter from "./HpFilter";
 import TypeFilter from "./TypeFilter";
 import FilterController from "./FilterController";
 import classes from '../../../styles/table/MainFilter.module.css';
+import NameFilter from "./NameFilter";
 
 interface MainFilterProps {
     page: number;
@@ -12,9 +12,7 @@ interface MainFilterProps {
 
 const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
     const [type, setType] = useState<string>('');
-    const [minHp, setMinHp] = useState<number>(0);
-    const [maxHp, setMaxHp] = useState<number>(150);
-    const [shouldSearch, setShouldSearch] = useState<boolean>(false);
+    const [name, setName] = useState<string>('');
 
 
     useEffect(() => {
@@ -25,26 +23,12 @@ const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
         <div className={classes.container}>
             <FilterController
             type={type} 
-            minHp={minHp} 
-            maxHp={maxHp} 
             page={page}
+            name={name}
             setTotalPokemonCount={setTotalPokemonCount}
-            shouldSearch={shouldSearch}
-            setShouldSearch={setShouldSearch}
             />
+            <NameFilter setName={setName}/>
             <TypeFilter setType={setType}/>
-            <HpFilter
-            minHp={minHp}
-            maxHp={maxHp}
-            setMinHp={setMinHp}
-            setMaxHp={setMaxHp}
-            />
-            <button 
-            onClick={() => setShouldSearch(true)}
-            className={classes.searchButton}
-            >
-                Search
-            </button>
         </div>
     )
 }

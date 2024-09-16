@@ -6,17 +6,18 @@ import { PokemonType } from "../../../types/Pokemon";
 
 interface FilterControllerProps {
     type: string;
-    minHp: number;
-    maxHp: number;
     page: number;
     setTotalPokemonCount: (count: number) => void;
-    shouldSearch: boolean;
-    setShouldSearch: (shouldSearch: boolean) => void;
+    name: string;
 }
 
 const FilterController = ({...props}: FilterControllerProps) => {
     const {setTablePokemons} = useDataContext();
-    const {type, minHp, maxHp, page, setTotalPokemonCount, shouldSearch, setShouldSearch} = props;
+
+    const {type, page, 
+        setTotalPokemonCount, 
+        name} = props;
+
     const [query, setQuery] = useState<string>('');
     const [pageQuery, setPageQuery] = useState<string>('');
 
@@ -27,14 +28,18 @@ const FilterController = ({...props}: FilterControllerProps) => {
     });
 
     const queryBuilder = useCallback(() => {
-        let newQuery = ` hp:[${minHp} TO ${maxHp}]`;
+        let newQuery = ``;
 
         if (type) {
             newQuery += ` types:${type}`;
         }
 
+        if(name) {
+            newQuery += ` name:${name}*`;
+        }
+        console.log(newQuery);
         setQuery(newQuery);
-    }, [type, minHp, maxHp]);
+    }, [type, name]);
 
     const pageQueryBuilder = useCallback(() => {
         const newPageQuery = `&page=${page}`;
@@ -42,11 +47,8 @@ const FilterController = ({...props}: FilterControllerProps) => {
     }, [page]);
 
     useEffect(() => {
-        if (shouldSearch) {
-            queryBuilder();
-            setShouldSearch(false);
-        }
-    }, [queryBuilder, shouldSearch, setShouldSearch]);
+        queryBuilder();
+    }, [queryBuilder, name, type]);
 
     useEffect(() => {
         pageQueryBuilder();

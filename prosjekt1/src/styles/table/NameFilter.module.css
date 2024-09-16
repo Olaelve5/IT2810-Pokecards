@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    text-align: left;
+}
+
+.input {
+    border-radius: 4px;
+    border: none;
+    padding: 0.3rem;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #ffffff;
+    color:black;
+    width: 127px;
+}
+
+.input:focus {
+    outline: none;
+}
