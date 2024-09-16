@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IconStar, IconStarFilled } from '@tabler/icons-react';
-import classes from '../../styles/FavouriteButton.module.css';
+import classes from '../../styles/buttons/FavouriteButton.module.css';
 import { useDataContext } from '../../contexts/DataContext';
 import { addFavoritePokemon, removeFavoritePokemon, isFavoritePokemon } from '../../utils/localStorageUtils';
 
@@ -8,7 +8,7 @@ interface FavouriteButtonProps {
   pokemonId: string;
 }
 
-const FavouriteButton: React.FC<FavouriteButtonProps> = ({}) => {
+const FavouriteButton: React.FC<FavouriteButtonProps> = () => {
   const [isFavourite, setIsFavourite] = useState(false);
   const { activePokemon } = useDataContext();
 
