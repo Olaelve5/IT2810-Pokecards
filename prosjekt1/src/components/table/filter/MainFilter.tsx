@@ -14,7 +14,7 @@ interface MainFilterProps {
 const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
     const [type, setType] = useState<string>('');
     const [name, setName] = useState<string>('');
-    const [orderBy, setOrderBy] = useState<string>('ID');
+    const [orderBy, setOrderBy] = useState<string>('Name');
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
     useEffect(() => {
