@@ -32,7 +32,7 @@ const FavouriteButton: React.FC<FavouriteButtonProps> = ({}) => {
 
   return (
     <button className={classes.favouriteButton} onClick={toggleFavourite}>
-      {isFavourite ? <IconStarFilled color="lightblue" /> : <IconStar />}
+      {isFavourite ? <IconStarFilled color="white" /> : <IconStar />}
     </button>
   );
 };
