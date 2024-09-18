@@ -2,7 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color: rgba(255, 255, 255, 0.87);
   background-color: #213547;
 }
@@ -26,9 +25,9 @@ body {
 
 .mainPokemonContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   position: relative;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .pageContent {

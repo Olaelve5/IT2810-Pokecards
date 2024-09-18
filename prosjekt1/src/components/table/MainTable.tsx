@@ -16,7 +16,7 @@ const MainTable = () => {
       <MainFilter page={page} setPage={setPage} setTotalPokemonCount={setTotalPokemonCount}/>
       <div className={classes.grid}>
         {tablePokemons?.map((pokemon: PokemonType) => (
-          <div key={pokemon.id} className={classes.cell}>
+          <div key={pokemon.number} className={classes.cell}>
             <Row {...pokemon} />
           </div>
         ))}

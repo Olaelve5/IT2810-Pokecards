@@ -2,16 +2,8 @@ import { IconCircleArrowLeft, IconCircleArrowRight } from '@tabler/icons-react';
 import classes from '../../styles/buttons/SideButtons.module.css';
 import { useDataContext } from '../../contexts/DataContext';
 import { useQuery } from '@tanstack/react-query';
-import { fetchPokemonById } from '../../utils/apiUtils';
+import { fetchPokemonByNumber } from '../../utils/apiUtils';
 
-const getNewId = (id: string, direction: number) => {
-    if (!id) return '';
-    const [idName, idNumber] = id.split('-');
-    const newIdNumber = parseInt(idNumber) + direction;
-    if (newIdNumber <= 0) return id;
-
-    return `${idName}-${newIdNumber}`;
-};
 
 interface SideButtonProps {
   direction: number;
@@ -20,16 +12,16 @@ interface SideButtonProps {
 
 const SideButton = ({ direction, Icon }: SideButtonProps) => {
   const { activePokemon, setActivePokemon } = useDataContext();
-  const { id } = activePokemon || {};
+  const { number } = activePokemon || {};
 
   const { refetch } = useQuery({
-    queryKey: id ? [getNewId(id, direction)] : [],
-    queryFn: fetchPokemonById,
+    queryKey: number ? [parseInt(number) + direction] : [],
+    queryFn: fetchPokemonByNumber,
     enabled: false,
   });
 
   const handleClick = async () => {
-    if (id) {
+    if (number) {
       const { data, status } = await refetch();
       if (status === 'success' && data) {
         setActivePokemon(data);
@@ -39,7 +31,7 @@ const SideButton = ({ direction, Icon }: SideButtonProps) => {
 
   return (
     <button className={classes.button} onClick={handleClick}>
-      <Icon size={40} color="white" className={classes.icon} />
+      <Icon size={45} color="white" className={classes.icon} />
     </button>
   );
 };

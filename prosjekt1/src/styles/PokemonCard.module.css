@@ -4,36 +4,36 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  width: 30%;
 }
 
-img {
-  width: 35%;
+.image {
+  width: 100%;
+  height: auto;
 }
-.wrapper {
+
+.favoriteIdContainer {
   display: flex;
-  align-items: center;
-  gap: 2.5rem; 
+  width: 95%;
+  justify-content: space-between;
 }
 
 .id {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   background-color: white; 
   color: #333; 
-  border-radius: 4px;
-  font-size: 0.8rem; 
+  border-radius: 50px;
+  font-size: 0.9rem; 
   font-weight: bold; 
-  font-family: 'Arial', sans-serif; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .name {
   display: inline-block;
-  padding: 0.5rem 1rem;
   color: #fff; 
   font-size: 2rem; 
   font-weight: bold; 
-  font-family: 'Arial', sans-serif; 
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 

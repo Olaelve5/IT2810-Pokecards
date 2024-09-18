@@ -14,7 +14,7 @@ const FavouriteButton: React.FC<FavouriteButtonProps> = () => {
 
   useEffect(() => {
     if (activePokemon) {
-      setIsFavourite(isFavoritePokemon(activePokemon.id));
+      setIsFavourite(isFavoritePokemon(activePokemon.number));
     }
   }, [activePokemon]);
 
@@ -23,9 +23,9 @@ const FavouriteButton: React.FC<FavouriteButtonProps> = () => {
       return;
     }
     if (isFavourite) {
-      removeFavoritePokemon(activePokemon.id);
+      removeFavoritePokemon(activePokemon.number);
     } else {
-      addFavoritePokemon(activePokemon.id);
+      addFavoritePokemon(activePokemon.number);
     }
     setIsFavourite(!isFavourite);
   };

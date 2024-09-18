@@ -4,10 +4,9 @@ type Images = {
 };
 
 export type PokemonType = {
-  id: string;
+  number: string;
   name: string;
   images: Images;
   hp?: number;
   types: string[];
-  // Add other properties as needed
 };

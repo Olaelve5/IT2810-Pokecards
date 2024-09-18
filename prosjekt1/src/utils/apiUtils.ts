@@ -5,7 +5,7 @@ const url = 'https://api.pokemontcg.io/v2/cards?q=';
 const set = 'set.id:ex6';
 
 export const fetchPokemonByName = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType> => {
-  const query =  set + 'name:' + queryKey + '&pageSize=5';
+  const query =  set + 'name:' + queryKey + '&pageSize=1';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -13,12 +13,12 @@ export const fetchPokemonByName = async ({ queryKey }: { queryKey: string[] }): 
   });
 
   const data = await res.json();
-  const { name, id, types, images } = data.data[0] as PokemonType;
-  return { name, id, types, images };
+  const { name, number, types, images } = data.data[0] as PokemonType;
+  return { name, number, types, images };
 };
 
-export const fetchPokemonById = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType> => {
-  const query = 'id:' + queryKey;
+export const fetchPokemonByNumber = async ({ queryKey }: { queryKey: number[] }): Promise<PokemonType> => {
+  const query =set + ' number:' + queryKey.toString() + '&pageSize=1';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -26,8 +26,8 @@ export const fetchPokemonById = async ({ queryKey }: { queryKey: string[] }): Pr
   });
 
   const data = await res.json();
-  const { name, id, types, images } = data.data[0] as PokemonType;
-  return { name, id, types, images };
+  const { name, number, types, images } = data.data[0] as PokemonType;
+  return { name, number, types, images };
 };
 
 
@@ -54,11 +54,11 @@ export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }
   const data = await res.json();
   const totalCount = data.totalCount;
   const pokemons = data.data.map((pokemon: PokemonType) => {
-    const { name, id, types, images } = pokemon;
+    const { name, number, types, images } = pokemon;
     if (!types) {
-      return { name, id, types: ['none'], images };
+      return { name, number, types: ['none'], images };
     }
-    return { name, id, types, images };
+    return { name, number, types, images };
   });
 
   return { pokemons: pokemons, count: totalCount };
