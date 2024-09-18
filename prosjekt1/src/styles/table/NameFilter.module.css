@@ -18,6 +18,16 @@
     width: 127px;
 }
 
+.input:disabled {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+}
+
+.input:disabled::placeholder {
+    color: rgb(0, 0, 0, 0.5);
+}
+
 .input:focus {
     outline: none;
 }

@@ -40,6 +40,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fbea71;
+  background-color: rgb(255, 213, 0);
   border-radius: 6px;
 }

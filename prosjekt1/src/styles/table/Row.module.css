@@ -3,13 +3,37 @@
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-}
-
-.container > h4 {
-    margin: 0;
-    margin-bottom: 0.5rem;
+    gap: 0.3rem;
+    position: relative;
 }
 
 .image {
     width: 150px;
+}
+
+.nameIdContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    align-items: center;
+}
+
+.nameIdContainer > h4 {
+    padding: 0;
+    margin: 0;
+}
+
+.nameIdContainer > p {
+    padding: 0;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+.star {
+    position: absolute;
+    bottom: -2rem;
+    color: rgb(255, 213, 0);
 }

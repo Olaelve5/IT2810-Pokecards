@@ -14,7 +14,7 @@ const FavouriteButton: React.FC<FavouriteButtonProps> = () => {
 
   useEffect(() => {
     if (activePokemon) {
-      setIsFavourite(isFavoritePokemon(activePokemon.number));
+      setIsFavourite(isFavoritePokemon(activePokemon));
     }
   }, [activePokemon]);
 
@@ -23,16 +23,16 @@ const FavouriteButton: React.FC<FavouriteButtonProps> = () => {
       return;
     }
     if (isFavourite) {
-      removeFavoritePokemon(activePokemon.number);
+      removeFavoritePokemon(activePokemon);
     } else {
-      addFavoritePokemon(activePokemon.number);
+      addFavoritePokemon(activePokemon);
     }
     setIsFavourite(!isFavourite);
   };
 
   return (
     <button className={classes.favouriteButton} onClick={toggleFavourite}>
-      {isFavourite ? <IconStarFilled color="white" /> : <IconStar />}
+      {isFavourite ? <IconStarFilled color="rgb(255, 213, 0)" /> : <IconStar />}
     </button>
   );
 };

@@ -6,6 +6,8 @@ interface DataContextProps {
     setActivePokemon: (pokemon: PokemonType) => void;
     tablePokemons: PokemonType[];
     setTablePokemons: (pokemons: PokemonType[]) => void;
+    showFavorites: boolean;
+    setShowFavorites: (show: boolean) => void;
 }
 
 export const DataContext = createContext<DataContextProps | undefined>(undefined);

@@ -14,7 +14,7 @@ interface FilterControllerProps {
 }
 
 const FilterController = ({...props}: FilterControllerProps) => {
-    const {setTablePokemons} = useDataContext();
+    const {setTablePokemons, showFavorites} = useDataContext();
 
     const {type, page, orderBy, sortDirection,
         setTotalPokemonCount, name} = props;
@@ -42,9 +42,10 @@ const FilterController = ({...props}: FilterControllerProps) => {
     }, [type, name]);
 
     const pageQueryBuilder = useCallback(() => {
+        if(showFavorites) return;
         const newPageQuery = `&page=${page}`;
         setPageQuery(newPageQuery);
-    }, [page]);
+    }, [page, showFavorites]);
 
     useEffect(() => {
         queryBuilder();

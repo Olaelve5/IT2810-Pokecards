@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { IconXboxXFilled } from '@tabler/icons-react';
 import { debounce } from 'lodash';
+import { useDataContext } from '../../../contexts/DataContext';
 import classes from '../../../styles/table/NameFilter.module.css';
 
 interface NameFilterProps {
@@ -9,6 +10,7 @@ interface NameFilterProps {
 }
 
 const NameFilter = ({ setName, name }: NameFilterProps) => {
+    const { showFavorites } = useDataContext();
     const [localName, setLocalName] = useState(name);
 
     // Function to delay the setName function, so it doesnt get called on every key press
@@ -29,6 +31,7 @@ const NameFilter = ({ setName, name }: NameFilterProps) => {
             <input
                 type="text"
                 value={localName}
+                disabled={showFavorites}
                 placeholder="Ex: Pikachu"
                 onChange={handleChange}
                 className={classes.input}

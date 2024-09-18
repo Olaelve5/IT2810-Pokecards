@@ -1,29 +1,41 @@
-// src/utils/localStorageUtils.ts
+import { PokemonType } from './../types/Pokemon';
 
 const FAVORITES_KEY = 'favoritePokemons';
 
-export const getFavoritePokemons = (): string[] => {
+export const getFavoritePokemons = (): PokemonType[] => {
   const favorites = localStorage.getItem(FAVORITES_KEY);
   return favorites ? JSON.parse(favorites) : [];
 };
 
-export const addFavoritePokemon = (pokemonId: string): void => {
+export const getFavoritePokemonsByPage = (page: number, pageSize: number): PokemonType[] => {
   const favorites = getFavoritePokemons();
-  if (!favorites.includes(pokemonId)) {
-    favorites.push(pokemonId);
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  return favorites.slice(start, end);
+}
+
+export const addFavoritePokemon = (pokemon: PokemonType): void => {
+  const favorites = getFavoritePokemons();
+  if (!favorites.includes(pokemon)) {
+    favorites.push(pokemon);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }
 };
 
-export const removeFavoritePokemon = (id: string): void => {
+export const removeFavoritePokemon = (pokemonToRemove: PokemonType): void => {
   const favorites = getFavoritePokemons();
-  const updatedFavorites = favorites.filter((id) => id !== id);
+  const updatedFavorites = favorites.filter((pokemon) => pokemon !== pokemonToRemove);
   localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
 };
 
-export const isFavoritePokemon = (id: string): boolean => {
+export const isFavoritePokemon = (pokemon: PokemonType): boolean => {
   const favorites = getFavoritePokemons();
-  return favorites.includes(id);
+  for (const favorite of favorites) {
+    if (favorite.number === pokemon.number) {
+      return true;
+    }
+  }
+  return false;
 };
 
 interface Filters {

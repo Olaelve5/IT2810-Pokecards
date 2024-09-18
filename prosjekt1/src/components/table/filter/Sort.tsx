@@ -1,5 +1,6 @@
 import { IconSortDescending, IconSortAscending } from '@tabler/icons-react';
 import classes from '../../../styles/table/Sort.module.css';
+import { useDataContext } from '../../../contexts/DataContext';
 
 const sortOptions = [
     'ID',
@@ -15,6 +16,7 @@ interface SortProps {
 }
 
 const Sort = ({setOrderBy, sortDirection, setSortDirection, orderBy}: SortProps) => {
+    const { showFavorites } = useDataContext();
 
     const handleSortDirection = () => {
         if (sortDirection === 'asc') {
@@ -32,12 +34,12 @@ const Sort = ({setOrderBy, sortDirection, setSortDirection, orderBy}: SortProps)
         <div className={classes.container}>
             <p>Sort by</p>
             <div className={classes.buttonContainer}>
-                <select onChange={handleChange} value={orderBy}>
+                <select onChange={handleChange} value={orderBy} disabled={showFavorites}>
                     {sortOptions.map((option) => (
                         <option key={option} value={option}>{option}</option>
                     ))}
                 </select>
-                <button onClick={handleSortDirection}>
+                <button onClick={handleSortDirection} disabled={showFavorites}>
                     {sortDirection === 'asc' ? <IconSortAscending size={20} /> : <IconSortDescending size={20} />}
                 </button>
             </div>

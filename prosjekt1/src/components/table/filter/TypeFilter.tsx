@@ -1,4 +1,5 @@
 import classes from '../../../styles/table/TypeFilter.module.css';
+import { useDataContext } from '../../../contexts/DataContext';
 
 const types = [
     'Colorless',
@@ -16,10 +17,13 @@ interface TypeFilterProps {
 }
 
 const TypeFilter = ({setType, type}: TypeFilterProps) => {
+    const { showFavorites } = useDataContext();
+
     return (
         <div className={classes.container}>
             <p>Type </p>
             <select 
+            disabled={showFavorites}
             onChange={(e) => setType(e.target.value)} 
             className={classes.select}
             value={type}

@@ -5,6 +5,7 @@ import { useDataContext } from '../../contexts/DataContext';
 import classes from '../../styles/table/MainTable.module.css';
 import PageButtons from '../buttons/PageButtons';
 import MainFilter from './filter/MainFilter';
+import FavoritesToggle from '../buttons/FavoritesToggle';
 
 const MainTable = () => {
   const { tablePokemons } = useDataContext();
@@ -14,6 +15,7 @@ const MainTable = () => {
   return (
     <div className={classes.tableContainer}>
       <MainFilter page={page} setPage={setPage} setTotalPokemonCount={setTotalPokemonCount}/>
+      <FavoritesToggle page={page} setPage={setPage} totalPokemonCount={totalPokemonCount} setTotalPokemonCount={setTotalPokemonCount}/>
       <div className={classes.grid}>
         {tablePokemons?.map((pokemon: PokemonType) => (
           <div key={pokemon.number} className={classes.cell}>

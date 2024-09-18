@@ -5,6 +5,7 @@ import { PokemonType } from "../types/Pokemon";
 const DataProvider = ({ children }: { children: React.ReactNode }) => {
     const [activePokemon, setActivePokemon] = useState<PokemonType | null>(null);
     const [tablePokemons, setTablePokemons] = useState<PokemonType[]>([]);
+    const [showFavorites, setShowFavorites] = useState<boolean>(false);
 
     useEffect(() => {
         if (!activePokemon && tablePokemons.length > 0) {
@@ -15,7 +16,9 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     return (
         <DataContext.Provider value={{ 
             activePokemon, setActivePokemon, 
-            tablePokemons, setTablePokemons}}>
+            tablePokemons, setTablePokemons,
+            showFavorites, setShowFavorites
+            }}>
             {children}
         </DataContext.Provider>
     );
