@@ -15,7 +15,7 @@ interface SortProps {
     setSortDirection: (sortDirection: 'asc' | 'desc') => void;
 }
 
-const Sort = ({setOrderBy, sortDirection, setSortDirection}: SortProps) => {
+const Sort = ({setOrderBy, sortDirection, setSortDirection, orderBy}: SortProps) => {
     const { showFavorites } = useDataContext();
 
     const handleSortDirection = () => {
@@ -40,7 +40,7 @@ const Sort = ({setOrderBy, sortDirection, setSortDirection}: SortProps) => {
         <div className={classes.container}>
             <p>Sort by</p>
             <div className={classes.buttonContainer}>
-                <select onChange={handleChange} disabled={showFavorites}>
+                <select onChange={handleChange} disabled={showFavorites} value={orderBy}>
                     {sortOptions.map((option) => (
                         <option key={option} value={option}>{option}</option>
                     ))}
