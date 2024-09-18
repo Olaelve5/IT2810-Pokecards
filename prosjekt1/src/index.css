@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #213547;
 }
 
 body {
@@ -14,4 +14,33 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #213547;
+  overflow-x: hidden;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.mainPokemonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.pageContent {
+  position: relative;
+  top: 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fbea71;
+  border-radius: 6px;
 }

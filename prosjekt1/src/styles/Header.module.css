@@ -2,14 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start; 
-  background-color:transparent;
+  background-color: transparent;
   width: 100%; 
-  position: fixed; 
-  top: 20px;
-  left: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 0 0rem 4rem; 
 }
 
 .logo {
-  width: 101px;
+  width: 100px;
   height: auto;
 }

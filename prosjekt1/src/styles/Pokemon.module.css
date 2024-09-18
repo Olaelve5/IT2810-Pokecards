@@ -12,27 +12,28 @@ img {
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 2.5rem; /* Adjust the gap between the id and the button */
+  gap: 2.5rem; 
 }
+
 .id {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: white; /* Light grey background */
-  color: #333; /* Dark text color */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 0.8rem; /* Font size */
-  font-weight: bold; /* Bold text */
-  font-family: 'Arial', sans-serif; /* Nice font */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: white; 
+  color: #333; 
+  border-radius: 4px;
+  font-size: 0.8rem; 
+  font-weight: bold; 
+  font-family: 'Arial', sans-serif; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .name {
   display: inline-block;
   padding: 0.5rem 1rem;
-  color: #fff; /* White text color */
-  font-size: 1.2rem; /* Font size */
-  font-weight: bold; /* Bold text */
-  font-family: 'Arial', sans-serif; /* Nice font */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  color: #fff; 
+  font-size: 2rem; 
+  font-weight: bold; 
+  font-family: 'Arial', sans-serif; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
