@@ -25,3 +25,20 @@ export const isFavoritePokemon = (id: string): boolean => {
   const favorites = getFavoritePokemons();
   return favorites.includes(id);
 };
+
+interface Filters {
+  type: string;
+  name: string;
+  orderBy: string;
+  sortDirection: 'asc' | 'desc';
+}
+
+export const saveFiltersToLocalStorage = (filters: Filters): void => {
+    localStorage.setItem('filters', JSON.stringify(filters));
+};  
+
+export const getFiltersFromLocalStorage = (): Filters => {
+    const filters = localStorage.getItem('filters');
+    return filters ? JSON.parse(filters) : {type: '', name: '', orderBy: 'Name', sortDirection: 'desc'};
+}
+
