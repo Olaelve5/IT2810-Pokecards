@@ -51,6 +51,6 @@ export const saveFiltersToLocalStorage = (filters: Filters): void => {
 
 export const getFiltersFromLocalStorage = (): Filters => {
     const filters = localStorage.getItem('filters');
-    return filters ? JSON.parse(filters) : {type: '', name: '', orderBy: 'Name', sortDirection: 'desc'};
+    return filters ? JSON.parse(filters) : {type: '', name: '', orderBy: 'number', sortDirection: 'asc'};
 }
 
