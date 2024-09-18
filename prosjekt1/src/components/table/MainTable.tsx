@@ -8,8 +8,7 @@ import MainFilter from './filter/MainFilter';
 import FavoritesToggle from '../buttons/FavoritesToggle';
 
 const MainTable = () => {
-  const { tablePokemons } = useDataContext();
-  const [totalPokemonCount, setTotalPokemonCount] = useState<number>(0);
+  const { tablePokemons, totalPokemonCount, setTotalPokemonCount } = useDataContext();
   const [page, setPage] = useState<number>(1);
 
   return (

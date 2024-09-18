@@ -6,6 +6,7 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     const [activePokemon, setActivePokemon] = useState<PokemonType | null>(null);
     const [tablePokemons, setTablePokemons] = useState<PokemonType[]>([]);
     const [showFavorites, setShowFavorites] = useState<boolean>(false);
+    const [totalPokemonCount, setTotalPokemonCount] = useState<number>(0);
 
     useEffect(() => {
         if (!activePokemon && tablePokemons.length > 0) {
@@ -17,7 +18,8 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
         <DataContext.Provider value={{ 
             activePokemon, setActivePokemon, 
             tablePokemons, setTablePokemons,
-            showFavorites, setShowFavorites
+            showFavorites, setShowFavorites,
+            totalPokemonCount, setTotalPokemonCount
             }}>
             {children}
         </DataContext.Provider>

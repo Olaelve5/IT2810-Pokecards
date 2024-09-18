@@ -11,11 +11,24 @@ interface SideButtonProps {
 }
 
 const SideButton = ({ direction, Icon }: SideButtonProps) => {
-  const { activePokemon, setActivePokemon } = useDataContext();
+  const { activePokemon, setActivePokemon, totalPokemonCount } = useDataContext();
   const { number } = activePokemon || {};
 
+  const getQueryKey = () => {
+    if (number) {
+      let value = parseInt(number) + direction;
+      if (value < 1) {
+        value = totalPokemonCount;
+      } else if (value > totalPokemonCount) {
+        value = 1;
+      }
+      return [value];
+    }
+    return [];
+  }
+
   const { refetch } = useQuery({
-    queryKey: number ? [parseInt(number) + direction] : [],
+    queryKey: getQueryKey(),
     queryFn: fetchPokemonByNumber,
     enabled: false,
   });

@@ -17,6 +17,7 @@
     width: 100%;
     height: fit-content;
     padding: 0;
+    gap: 0.5rem;
     align-items: center;
 }
 
