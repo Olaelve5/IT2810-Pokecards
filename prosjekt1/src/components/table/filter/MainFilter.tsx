@@ -43,9 +43,12 @@ const MainFilter = ({page, setPage, setTotalPokemonCount}: MainFilterProps) => {
                 setTotalPokemonCount={setTotalPokemonCount}
                 sortDirection={sortDirection}
             />
-            <NameFilter name={name} setName={setName}/>
-            <TypeFilter type={type} setType={setType}/>
-            <Sort orderBy={orderBy} setOrderBy={setOrderBy} sortDirection={sortDirection} setSortDirection={setSortDirection}/>
+            <h3 className={classes.title}>Find cards</h3>
+            <div className={classes.filterContainer}>
+                <NameFilter name={name} setName={setName}/>
+                <TypeFilter type={type} setType={setType}/>
+                <Sort orderBy={orderBy} setOrderBy={setOrderBy} sortDirection={sortDirection} setSortDirection={setSortDirection}/>
+            </div>
         </div>
     )
 }

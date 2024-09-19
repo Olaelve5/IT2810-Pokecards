@@ -16,7 +16,9 @@ export const getFavoritePokemonsByPage = (page: number, pageSize: number): Pokem
 
 export const addFavoritePokemon = (pokemon: PokemonType): void => {
   const favorites = getFavoritePokemons();
-  if (!favorites.includes(pokemon)) {
+  const isAlreadyFavorite = favorites.some((fav) => fav.number === pokemon.number);
+
+  if (!isAlreadyFavorite) {
     favorites.push(pokemon);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }
@@ -24,7 +26,7 @@ export const addFavoritePokemon = (pokemon: PokemonType): void => {
 
 export const removeFavoritePokemon = (pokemonToRemove: PokemonType): void => {
   const favorites = getFavoritePokemons();
-  const updatedFavorites = favorites.filter((pokemon) => pokemon !== pokemonToRemove);
+  const updatedFavorites = favorites.filter((pokemon) => pokemon.number !== pokemonToRemove.number);
   localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
 };
 

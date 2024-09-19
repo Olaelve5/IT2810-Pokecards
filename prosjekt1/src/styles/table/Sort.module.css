@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 0.2rem;
     text-align: left;
+    width: 10rem;
 }
 
 .buttonContainer {
@@ -19,6 +20,7 @@ select {
     padding: 0.3rem;
     padding-right: 1rem;
     font-size: 14px;
+    width: 75%;
 }
 
 select:focus {
@@ -43,6 +45,7 @@ button {
     background-color: white;
     justify-content: center;
     align-items: center;
+    width: 25%;
 }
 
 button:focus {

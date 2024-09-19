@@ -38,7 +38,7 @@ const FavoritesToggle = ({page, setPage, setTotalPokemonCount, totalPokemonCount
 
     return (
         <div className={classes.container}>
-            <button onClick={toggleFavorites}>{!showFavorites ? "Show favorites" : "Show all pokemons"}</button>
+            <button onClick={toggleFavorites}>{!showFavorites ? "Show only favorites" : "Show all pokemons"}</button>
         </div>
     )
 }
