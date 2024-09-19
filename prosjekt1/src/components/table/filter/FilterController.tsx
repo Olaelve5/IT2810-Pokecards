@@ -14,7 +14,7 @@ interface FilterControllerProps {
 }
 
 const FilterController = ({...props}: FilterControllerProps) => {
-    const {setTablePokemons, showFavorites} = useDataContext();
+    const {setTablePokemons, showFavorites, setGlobalTotalPokemonCount} = useDataContext();
 
     const {type, page, orderBy, sortDirection,
         setTotalPokemonCount, name} = props;
@@ -61,6 +61,7 @@ const FilterController = ({...props}: FilterControllerProps) => {
             if (status === 'success' && data) {
                 setTablePokemons(data.pokemons as PokemonType[]);
                 setTotalPokemonCount(data.count);
+                setGlobalTotalPokemonCount(data.count);
             } else {
                 console.error('Failed to fetch data', status);
             }
@@ -69,7 +70,7 @@ const FilterController = ({...props}: FilterControllerProps) => {
           fetchData();
         }
         
-    }, [query, sortDirection, pageQuery, refetch, setTablePokemons, setTotalPokemonCount, orderBy]);
+    }, [query, sortDirection, pageQuery, refetch, setTablePokemons, setTotalPokemonCount, setGlobalTotalPokemonCount, orderBy]);
 
     return null;
 }

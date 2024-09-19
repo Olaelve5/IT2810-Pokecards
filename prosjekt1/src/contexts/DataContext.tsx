@@ -10,6 +10,8 @@ interface DataContextProps {
     setShowFavorites: (show: boolean) => void;
     totalPokemonCount: number;
     setTotalPokemonCount: (count: number) => void;
+    globalTotalPokemonCount: number;
+    setGlobalTotalPokemonCount: (count: number) => void;
 }
 
 export const DataContext = createContext<DataContextProps | undefined>(undefined);
