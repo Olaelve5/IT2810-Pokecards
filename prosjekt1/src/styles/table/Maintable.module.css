@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border-top: white 1px solid;
-    margin-top: 70px;
+    border-top: rgba(255, 255, 255, 0.579) 1px solid;
+    margin-top: 2rem;
     justify-content: center;
 }
 
