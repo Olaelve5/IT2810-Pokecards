@@ -11,15 +11,15 @@ interface SideButtonProps {
 }
 
 const SideButton = ({ direction, Icon }: SideButtonProps) => {
-  const { activePokemon, setActivePokemon, globalTotalPokemonCount } = useDataContext();
+  const { activePokemon, setActivePokemon } = useDataContext();
   const { number } = activePokemon || {};
 
   const getQueryKey = () => {
     if (number) {
       let value = parseInt(number) + direction;
       if (value < 1) {
-        value = globalTotalPokemonCount;
-      } else if (value > globalTotalPokemonCount) {
+        value = 116;
+      } else if (value > 116) {
         value = 1;
       }
       return [value];
