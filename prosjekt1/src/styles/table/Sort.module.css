@@ -21,6 +21,7 @@ select {
     padding-right: 1rem;
     font-size: 14px;
     width: 75%;
+    background-color: white;
 }
 
 select:focus {

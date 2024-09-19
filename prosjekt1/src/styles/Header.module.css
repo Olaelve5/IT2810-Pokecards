@@ -11,6 +11,7 @@
   background-color: rgb(255, 213, 0); 
   gap: 0.5rem;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.474);
+  max-width: 100dvw;
 }
 
 .logo {
@@ -24,4 +25,18 @@
   font-weight: 600;
   font-size: 25px;
   color: #213547;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 0.5rem 0 0.5rem 0rem;
+    justify-content: center;
+  }
+  .title {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 70px;
+  }
 }
