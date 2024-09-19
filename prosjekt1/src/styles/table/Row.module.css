@@ -8,6 +8,8 @@
     padding: 0.4rem 1rem 1rem 1rem;
     border-radius: 10px;
     transition: all 0.1s ease;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container:hover {
@@ -17,21 +19,26 @@
 
 .image {
     width: 150px;
+    height: auto;
 }
 
 .nameIdContainer {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 150px;
     height: fit-content;
     padding: 0;
     gap: 0.5rem;
-    align-items: center;
+    align-items: end;
 }
 
 .nameIdContainer > h4 {
     padding: 0;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 .nameIdContainer > p {
@@ -45,4 +52,34 @@
     position: absolute;
     bottom: -2rem;
     color: rgb(255, 213, 0);
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        padding: 0.4rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .container:hover {
+        background-color: transparent;
+    }
+
+    .image {
+        width: 125px;
+    }
+
+    .nameIdContainer {
+        width: 125px;
+    }
+
+    .star {
+        bottom: -1.5rem;
+    }
+
+    .nameIdContainer > h4 {
+        font-size: 0.9rem;
+    }
+
+    .nameIdContainer > p {
+        font-size: 0.9rem;
+    }
 }

@@ -10,7 +10,6 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
-    
     margin-top: 1rem;
     margin-bottom: 3.5rem
 }
@@ -33,14 +32,18 @@
     color: white;
 }
 
-@media (max-width: 768px) {
-.grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-}
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+
+    .grid {
+        margin-bottom: 2rem
+    }
 }
 
-@media (max-width: 480px) {
-.grid {
-    grid-template-columns: 1fr; /* 1 column on small screens */
-}
+@media (max-width: 450px) {
+    .cell {
+        padding: 1rem 0 1.5rem 0;
+    }
 }
