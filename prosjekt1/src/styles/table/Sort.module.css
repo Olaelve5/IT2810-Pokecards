@@ -60,3 +60,14 @@ button:disabled {
     cursor: not-allowed;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        width: 8rem;
+    }
+    select {
+        width: 70%;
+    }
+    button {
+        width: 30%;
+    }
+}

@@ -42,3 +42,10 @@
     color: rgb(50, 50, 50);
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 8rem;
+    }
+    
+}

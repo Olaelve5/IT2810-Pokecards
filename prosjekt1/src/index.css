@@ -10,16 +10,21 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  min-width: 300px;
   min-height: 100vh;
   background-color: #213547;
   overflow-x: hidden;
 }
 
 #root {
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   text-align: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainPokemonContainer {
@@ -32,6 +37,9 @@ body {
 .pageContent {
   position: relative;
   top: 3rem;
+  overflow-x: hidden;
+  max-width: 1200px;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -41,4 +49,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: rgb(255, 255, 255);
   border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .pageContent {
+    top: 1.5rem;
+  } 
 }

@@ -3,9 +3,10 @@
     cursor: pointer;
     padding: 0;
     display: flex;
-    align-items:2center;
     justify-content: center;
     color:rgba(255, 255, 255, 0.655);
+    width: fit-content;
+    -webkit-tap-highlight-color: transparent; /* Remove blue flash on mobile */
 }
 .favouriteButton:focus {
     outline: none;
@@ -17,4 +18,16 @@
 }
 .favouriteButton:hover svg {
   color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 576px) {
+    .favouriteButton svg {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .favouriteButton:hover svg {
+        color:rgba(255, 255, 255, 0.655);
+    }
 }

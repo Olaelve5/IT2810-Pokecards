@@ -4,6 +4,7 @@
     flex-direction: column;
     width: fit-content;
     text-align: left;
+    width: 10rem;
 }
 
 .select {
@@ -15,8 +16,8 @@
     padding: 0.3rem;
     padding-right: 1rem;
     font-size: 14px;
-    width: 10rem;
     background-color: white;
+    width: 100%;
 }
 
 .select:focus {
@@ -35,4 +36,10 @@ p {
     color: white;
     margin: 0;
     font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 8rem;
+    }
 }

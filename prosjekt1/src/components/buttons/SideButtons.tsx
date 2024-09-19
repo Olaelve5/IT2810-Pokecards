@@ -44,7 +44,7 @@ const SideButton = ({ direction, Icon }: SideButtonProps) => {
 
   return (
     <button className={classes.button} onClick={handleClick}>
-      <Icon size={45} color="white" className={classes.icon} />
+      <Icon color="white" className={classes.icon} />
     </button>
   );
 };

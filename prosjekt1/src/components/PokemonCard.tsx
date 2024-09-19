@@ -15,7 +15,7 @@ const Pokemon = () => {
       {activePokemon.images.large && <img src={activePokemon.images.large} alt={activePokemon.name} className={classes.image}/>}
       <div className={classes.favoriteIdContainer}>
         <div className={classes.id}>#{activePokemon.number}</div>
-        <FavouriteButton pokemonId={''} />
+        <FavouriteButton pokemonId={''}/>
       </div>
     </div>
   );
