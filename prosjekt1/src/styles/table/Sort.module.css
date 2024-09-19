@@ -71,3 +71,9 @@ button:disabled {
         width: 30%;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+}
