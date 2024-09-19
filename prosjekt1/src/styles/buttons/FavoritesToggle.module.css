@@ -7,7 +7,7 @@
 }
 
 .container > button {
-    width: 100%;
+    width: 58.5rem;
     padding: 0.6rem 0;
     border: none;
     cursor: pointer;
@@ -19,4 +19,21 @@
 
 .container > button:hover {
     background-color: rgb(255, 213, 0, 0.8);
+}
+
+@media screen and (max-width: 1200px) {
+    .container > button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container > button {
+        padding: 0.5rem 0;
+        font-size: 14px;
+    }
+
+    .container > button:hover {
+        background-color: rgb(255, 213, 0);
+    }
 }
