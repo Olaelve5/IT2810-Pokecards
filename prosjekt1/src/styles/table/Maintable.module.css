@@ -12,6 +12,14 @@
     grid-template-columns: repeat(3, 1fr); /* 3 columns for cards */
     gap: 20px; /* Space between grid items */
     margin-top: 20px;
+    margin-bottom: 3.5rem
+}
+
+.noResults {
+    font-style: italic;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .cell {

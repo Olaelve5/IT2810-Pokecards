@@ -16,6 +16,10 @@ const MainTable = () => {
       <MainFilter page={page} setPage={setPage} setTotalPokemonCount={setTotalPokemonCount}/>
       <FavoritesToggle page={page} setPage={setPage} totalPokemonCount={totalPokemonCount} setTotalPokemonCount={setTotalPokemonCount}/>
       <div className={classes.grid}>
+        {tablePokemons && tablePokemons.length === 0 && (
+          <div className={classes.noResults}>No pokemon found</div>
+        )}
+
         {tablePokemons?.map((pokemon: PokemonType) => (
           <div key={pokemon.number} className={classes.cell}>
             <Row {...pokemon} />
