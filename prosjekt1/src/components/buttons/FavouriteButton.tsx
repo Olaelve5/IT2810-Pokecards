@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IconStar, IconStarFilled } from '@tabler/icons-react';
 import classes from '../../styles/buttons/FavouriteButton.module.css';
 import { useDataContext } from '../../contexts/DataContext';
