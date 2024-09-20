@@ -1,0 +1,560 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MainTable > renders table and updates displayName on click 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="_tableContainer_bf6e8c"
+      >
+        <div
+          class="_container_5b5f10"
+        >
+          <h3
+            class="_title_5b5f10"
+          >
+            Find cards
+          </h3>
+          <div
+            class="_filterContainer_5b5f10"
+          >
+            <div
+              class="_container_d50bc9"
+            >
+              <p>
+                Name
+              </p>
+              <input
+                class="_input_d50bc9"
+                placeholder="Ex: Pikachu"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="_container_d1f101"
+            >
+              <p>
+                Type 
+              </p>
+              <select
+                class="_select_d1f101"
+              >
+                <option
+                  value=""
+                >
+                  All
+                </option>
+                <option
+                  value="Colorless"
+                >
+                  Colorless
+                </option>
+                <option
+                  value="Fighting"
+                >
+                  Fighting
+                </option>
+                <option
+                  value="Fire"
+                >
+                  Fire
+                </option>
+                <option
+                  value="Grass"
+                >
+                  Grass
+                </option>
+                <option
+                  value="Lightning"
+                >
+                  Lightning
+                </option>
+                <option
+                  value="Psychic"
+                >
+                  Psychic
+                </option>
+                <option
+                  value="Water"
+                >
+                  Water
+                </option>
+              </select>
+            </div>
+            <div
+              class="_container_7723c2"
+            >
+              <p>
+                Sort by
+              </p>
+              <div
+                class="_buttonContainer_7723c2"
+              >
+                <select>
+                  <option
+                    value="ID"
+                  >
+                    ID
+                  </option>
+                  <option
+                    value="Name"
+                  >
+                    Name
+                  </option>
+                  <option
+                    value="HP"
+                  >
+                    HP
+                  </option>
+                </select>
+                <button>
+                  <svg
+                    class="tabler-icon tabler-icon-sort-ascending "
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 6l7 0"
+                    />
+                    <path
+                      d="M4 12l7 0"
+                    />
+                    <path
+                      d="M4 18l9 0"
+                    />
+                    <path
+                      d="M15 9l3 -3l3 3"
+                    />
+                    <path
+                      d="M18 6l0 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_container_daa855"
+        >
+          <button>
+            Show only favorites
+          </button>
+        </div>
+        <div
+          class="_grid_bf6e8c"
+        >
+          <div
+            class="_cell_bf6e8c"
+          >
+            <div
+              class="_container_8796b6"
+            >
+              <div
+                class="_nameIdContainer_8796b6"
+              >
+                <h4>
+                  Beedrill
+                </h4>
+                <p>
+                  #
+                  1
+                </p>
+              </div>
+              <img
+                alt="Beedrill"
+                class="_image_8796b6"
+                src="https://example.com/small.png"
+              />
+            </div>
+          </div>
+          <div
+            class="_cell_bf6e8c"
+          >
+            <div
+              class="_container_8796b6"
+            >
+              <div
+                class="_nameIdContainer_8796b6"
+              >
+                <h4>
+                  Butterfree
+                </h4>
+                <p>
+                  #
+                  2
+                </p>
+              </div>
+              <img
+                alt="Butterfree"
+                class="_image_8796b6"
+                src="https://example.com/small.png"
+              />
+            </div>
+          </div>
+          <div
+            class="_cell_bf6e8c"
+          >
+            <div
+              class="_container_8796b6"
+            >
+              <div
+                class="_nameIdContainer_8796b6"
+              >
+                <h4>
+                  Pikachu
+                </h4>
+                <p>
+                  #
+                  3
+                </p>
+              </div>
+              <img
+                alt="Pikachu"
+                class="_image_8796b6"
+                src="https://example.com/small.png"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="_container_628c4c"
+        >
+          <button
+            class="_button_628c4c"
+            disabled=""
+          >
+            Previous
+          </button>
+          <div
+            class="_textContainer_628c4c"
+          >
+            <span>
+              1
+            </span>
+            <span>
+              / 
+              NaN
+            </span>
+          </div>
+          <button
+            class="_button_628c4c"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="_tableContainer_bf6e8c"
+    >
+      <div
+        class="_container_5b5f10"
+      >
+        <h3
+          class="_title_5b5f10"
+        >
+          Find cards
+        </h3>
+        <div
+          class="_filterContainer_5b5f10"
+        >
+          <div
+            class="_container_d50bc9"
+          >
+            <p>
+              Name
+            </p>
+            <input
+              class="_input_d50bc9"
+              placeholder="Ex: Pikachu"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="_container_d1f101"
+          >
+            <p>
+              Type 
+            </p>
+            <select
+              class="_select_d1f101"
+            >
+              <option
+                value=""
+              >
+                All
+              </option>
+              <option
+                value="Colorless"
+              >
+                Colorless
+              </option>
+              <option
+                value="Fighting"
+              >
+                Fighting
+              </option>
+              <option
+                value="Fire"
+              >
+                Fire
+              </option>
+              <option
+                value="Grass"
+              >
+                Grass
+              </option>
+              <option
+                value="Lightning"
+              >
+                Lightning
+              </option>
+              <option
+                value="Psychic"
+              >
+                Psychic
+              </option>
+              <option
+                value="Water"
+              >
+                Water
+              </option>
+            </select>
+          </div>
+          <div
+            class="_container_7723c2"
+          >
+            <p>
+              Sort by
+            </p>
+            <div
+              class="_buttonContainer_7723c2"
+            >
+              <select>
+                <option
+                  value="ID"
+                >
+                  ID
+                </option>
+                <option
+                  value="Name"
+                >
+                  Name
+                </option>
+                <option
+                  value="HP"
+                >
+                  HP
+                </option>
+              </select>
+              <button>
+                <svg
+                  class="tabler-icon tabler-icon-sort-ascending "
+                  fill="none"
+                  height="20"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 6l7 0"
+                  />
+                  <path
+                    d="M4 12l7 0"
+                  />
+                  <path
+                    d="M4 18l9 0"
+                  />
+                  <path
+                    d="M15 9l3 -3l3 3"
+                  />
+                  <path
+                    d="M18 6l0 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_container_daa855"
+      >
+        <button>
+          Show only favorites
+        </button>
+      </div>
+      <div
+        class="_grid_bf6e8c"
+      >
+        <div
+          class="_cell_bf6e8c"
+        >
+          <div
+            class="_container_8796b6"
+          >
+            <div
+              class="_nameIdContainer_8796b6"
+            >
+              <h4>
+                Beedrill
+              </h4>
+              <p>
+                #
+                1
+              </p>
+            </div>
+            <img
+              alt="Beedrill"
+              class="_image_8796b6"
+              src="https://example.com/small.png"
+            />
+          </div>
+        </div>
+        <div
+          class="_cell_bf6e8c"
+        >
+          <div
+            class="_container_8796b6"
+          >
+            <div
+              class="_nameIdContainer_8796b6"
+            >
+              <h4>
+                Butterfree
+              </h4>
+              <p>
+                #
+                2
+              </p>
+            </div>
+            <img
+              alt="Butterfree"
+              class="_image_8796b6"
+              src="https://example.com/small.png"
+            />
+          </div>
+        </div>
+        <div
+          class="_cell_bf6e8c"
+        >
+          <div
+            class="_container_8796b6"
+          >
+            <div
+              class="_nameIdContainer_8796b6"
+            >
+              <h4>
+                Pikachu
+              </h4>
+              <p>
+                #
+                3
+              </p>
+            </div>
+            <img
+              alt="Pikachu"
+              class="_image_8796b6"
+              src="https://example.com/small.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_container_628c4c"
+      >
+        <button
+          class="_button_628c4c"
+          disabled=""
+        >
+          Previous
+        </button>
+        <div
+          class="_textContainer_628c4c"
+        >
+          <span>
+            1
+          </span>
+          <span>
+            / 
+            NaN
+          </span>
+        </div>
+        <button
+          class="_button_628c4c"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

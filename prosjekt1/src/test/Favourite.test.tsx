@@ -31,14 +31,14 @@ describe('FavouriteButton Component', () => {
   it('should match the snapshot when Pokémon is not a favorite', () => {
     (isFavoritePokemon as jest.Mock).mockReturnValue(false); // Pokémon is not a favorite
 
-    const { asFragment } = render(<FavouriteButton pokemonId={''} />);
+    const { asFragment } = render(<FavouriteButton />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should match the snapshot when Pokémon is a favorite', () => {
     (isFavoritePokemon as jest.Mock).mockReturnValue(true); // Pokémon is a favorite
 
-    const { asFragment } = render(<FavouriteButton pokemonId={''} />);
+    const { asFragment } = render(<FavouriteButton />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
