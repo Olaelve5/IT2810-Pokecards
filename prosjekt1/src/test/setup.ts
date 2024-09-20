@@ -1,11 +1,46 @@
-import '@testing-library/jest-dom'; // Import custom matchers from Testing Library
-import { vi } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom/vitest';
+import { afterAll, afterEach, beforeAll } from 'vitest'
+import { setupServer } from 'msw/node'
+import { HttpResponse, graphql, http } from 'msw'
 
-// Example: Mocking a global function
-globalThis.fetch = vi.fn();
+afterEach(() => {
+  cleanup();
+});
 
-// Example: Mocking a commonly used module
-vi.mock('axios', () => ({
-  get: vi.fn(),
-  post: vi.fn(),
-}));
+
+const pokemon = {
+  number: 2,
+  name: 'Butterfree',
+  images: {
+    small: 'https://example.com/small.png',
+    large: 'https://example.com/large.png',
+  },
+};
+
+export const restHandlers = [
+  http.get('https://api.pokemontcg.io/v2/cards?q=set.id:ex6 number:2&pageSize=1', () => {
+    return HttpResponse.json(pokemon)
+  }),
+]
+
+const graphqlHandlers = [
+  graphql.query('ListPosts', () => {
+    return HttpResponse.json(
+      {
+        data: { pokemon },
+      },
+    )
+  }),
+]
+
+const server = setupServer(...restHandlers, ...graphqlHandlers)
+
+// Start server before all tests
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
+
+//  Close server after all tests
+afterAll(() => server.close())
+
+// Reset handlers after each test `important for test isolation`
+afterEach(() => server.resetHandlers())

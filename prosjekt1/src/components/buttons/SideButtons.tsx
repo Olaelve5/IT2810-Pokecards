@@ -8,9 +8,10 @@ import { fetchPokemonByNumber } from '../../utils/apiUtils';
 interface SideButtonProps {
   direction: number;
   Icon: typeof IconCircleArrowLeft | typeof IconCircleArrowRight;
+  testId?: string;
 }
 
-const SideButton = ({ direction, Icon }: SideButtonProps) => {
+const SideButton = ({ direction, Icon, testId }: SideButtonProps) => {
   const { activePokemon, setActivePokemon } = useDataContext();
   const { number } = activePokemon || {};
 
@@ -43,7 +44,11 @@ const SideButton = ({ direction, Icon }: SideButtonProps) => {
   };
 
   return (
-    <button className={classes.button} onClick={handleClick}>
+    <button 
+    className={classes.button} 
+    onClick={handleClick}
+    data-testid={testId}
+    >
       <Icon color="white" className={classes.icon} />
     </button>
   );
@@ -54,5 +59,5 @@ export const LeftButton = () => (
 );
 
 export const RightButton = () => (
-  <SideButton direction={1} Icon={IconCircleArrowRight} />
+  <SideButton direction={1} Icon={IconCircleArrowRight} testId='nextPokemonButton'/>
 );

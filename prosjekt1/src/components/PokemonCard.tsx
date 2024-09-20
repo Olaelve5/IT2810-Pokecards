@@ -12,7 +12,7 @@ const Pokemon = () => {
   return (
     <div className={classes.container}>
       <div className={classes.name}>{activePokemon.name}</div>
-      {activePokemon.images.large && <img src={activePokemon.images.large} alt={activePokemon.name} className={classes.image}/>}
+      {activePokemon.images.large && <img src={activePokemon.images.large} alt={activePokemon.name + ' image'} className={classes.image}/>}
       <div className={classes.favoriteIdContainer}>
         <div className={classes.id}>#{activePokemon.number}</div>
         <FavouriteButton pokemonId={''}/>
