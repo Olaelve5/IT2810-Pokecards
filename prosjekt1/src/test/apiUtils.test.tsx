@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { fetchPokemonByNumber, fetchPokemonsBySearch } from '../utils/apiUtils'; // Juster stien etter behov
+import { fetchPokemonByNumber, fetchPokemonsBySearch } from '../utils/apiUtils'; 
 
 const mockPokemons = [
   {
@@ -26,10 +26,8 @@ const mockPokemons = [
 describe('API Calls', () => {
 
   beforeEach(() => {
-    // Reset all mocks before each test
     vi.clearAllMocks();
 
-    // Mock fetch implementation
     global.fetch = vi.fn().mockResolvedValue({
       json: vi.fn().mockResolvedValue({
         data: mockPokemons,
@@ -52,7 +50,6 @@ describe('API Calls', () => {
       data: mockPokemons,
     };
 
-    // Adjust fetch mock for search
     (fetch as jest.Mock).mockResolvedValueOnce({
       json: vi.fn().mockResolvedValue(mockSearchResult),
     });
