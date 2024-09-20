@@ -21,7 +21,7 @@ const Row: React.FC<PokemonType> = (pokemon) => {
   };
 
   useEffect(() => {
-    setIsFavorite(isFavoritePokemon(localPokemon));    
+    setIsFavorite(isFavoritePokemon(localPokemon));
   }, [localPokemon]);
 
   return (
@@ -31,7 +31,7 @@ const Row: React.FC<PokemonType> = (pokemon) => {
         <p>#{localPokemon.number}</p>
       </div>
       <img src={localPokemon.images.small} alt={localPokemon.name} className={classes.image} />
-      {isFavorite && <IconStarFilled className={classes.star}/>}
+      {isFavorite && <IconStarFilled className={classes.star} />}
     </div>
   );
 };

@@ -9,7 +9,7 @@ function App() {
     <>
       <Logo />
       <DataProvider>
-        <div className='pageContent'>
+        <div className="pageContent">
           <div className="mainPokemonContainer">
             <LeftButton />
             <PokemonCard />

@@ -1,85 +1,84 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    gap: 0.3rem;
-    position: relative;
-    padding: 0.4rem 1rem 1rem 1rem;
-    border-radius: 10px;
-    transition: all 0.1s ease;
-    justify-content: center;
-    -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.3rem;
+  position: relative;
+  padding: 0.4rem 1rem 1rem 1rem;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container:hover {
-    background-color: rgba(172, 193, 202, 0.27);
-    backdrop-filter: blur(5px);
+  background-color: rgba(172, 193, 202, 0.27);
+  backdrop-filter: blur(5px);
 }
 
 .image {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 .nameIdContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
-    height: fit-content;
-    padding: 0;
-    gap: 0.5rem;
-    align-items: end;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  height: fit-content;
+  padding: 0;
+  gap: 0.5rem;
+  align-items: end;
 }
 
 .nameIdContainer > h4 {
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nameIdContainer > p {
-    padding: 0;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
 }
 
 .star {
-    position: absolute;
-    bottom: -2rem;
-    color: rgb(255, 213, 0);
+  position: absolute;
+  bottom: -2rem;
+  color: rgb(255, 213, 0);
 }
 
 @media screen and (max-width: 450px) {
-    .container {
-        padding: 0.4rem 0.5rem 0.5rem 0.5rem;
-    }
+  .container {
+    padding: 0.4rem 0.5rem 0.5rem 0.5rem;
+  }
 
-    .container:hover {
-        background-color: transparent;
-    }
+  .container:hover {
+    background-color: transparent;
+  }
 
-    .image {
-        width: 125px;
-    }
+  .image {
+    width: 125px;
+  }
 
-    .nameIdContainer {
-        width: 125px;
-    }
+  .nameIdContainer {
+    width: 125px;
+  }
 
-    .star {
-        bottom: -1.5rem;
-    }
+  .star {
+    bottom: -1.5rem;
+  }
 
-    .nameIdContainer > h4 {
-        font-size: 0.9rem;
-    }
+  .nameIdContainer > h4 {
+    font-size: 0.9rem;
+  }
 
-    .nameIdContainer > p {
-        font-size: 0.9rem;
-    }
+  .nameIdContainer > p {
+    font-size: 0.9rem;
+  }
 }

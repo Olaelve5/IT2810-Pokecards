@@ -4,7 +4,6 @@ import classes from '../../styles/buttons/FavouriteButton.module.css';
 import { useDataContext } from '../../contexts/DataContext';
 import { addFavoritePokemon, removeFavoritePokemon, isFavoritePokemon } from '../../utils/localStorageUtils';
 
-
 const FavouriteButton = () => {
   const [isFavourite, setIsFavourite] = useState(false);
   const { activePokemon } = useDataContext();

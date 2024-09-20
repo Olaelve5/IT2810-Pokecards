@@ -4,7 +4,6 @@ import { useDataContext } from '../../contexts/DataContext';
 import { useQuery } from '@tanstack/react-query';
 import { fetchPokemonByNumber } from '../../utils/apiUtils';
 
-
 interface SideButtonProps {
   direction: number;
   Icon: typeof IconCircleArrowLeft | typeof IconCircleArrowRight;
@@ -26,7 +25,7 @@ const SideButton = ({ direction, Icon, testId }: SideButtonProps) => {
       return [value];
     }
     return [];
-  }
+  };
 
   const { refetch } = useQuery({
     queryKey: getQueryKey(),
@@ -44,20 +43,12 @@ const SideButton = ({ direction, Icon, testId }: SideButtonProps) => {
   };
 
   return (
-    <button 
-    className={classes.button} 
-    onClick={handleClick}
-    data-testid={testId}
-    >
+    <button className={classes.button} onClick={handleClick} data-testid={testId}>
       <Icon color="white" className={classes.icon} />
     </button>
   );
 };
 
-export const LeftButton = () => (
-  <SideButton direction={-1} Icon={IconCircleArrowLeft} />
-);
+export const LeftButton = () => <SideButton direction={-1} Icon={IconCircleArrowLeft} />;
 
-export const RightButton = () => (
-  <SideButton direction={1} Icon={IconCircleArrowRight} testId='nextPokemonButton'/>
-);
+export const RightButton = () => <SideButton direction={1} Icon={IconCircleArrowRight} testId="nextPokemonButton" />;

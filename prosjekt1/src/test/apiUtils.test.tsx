@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { fetchPokemonByNumber, fetchPokemonsBySearch } from '../utils/apiUtils'; 
+import { fetchPokemonByNumber, fetchPokemonsBySearch } from '../utils/apiUtils';
 
 const mockPokemons = [
   {
@@ -18,13 +18,11 @@ const mockPokemons = [
       small: 'https://example.com/small.png',
       large: 'https://example.com/large.png',
     },
-    types: ['Grass']
-  }
+    types: ['Grass'],
+  },
 ];
 
-
 describe('API Calls', () => {
-
   beforeEach(() => {
     vi.clearAllMocks();
 

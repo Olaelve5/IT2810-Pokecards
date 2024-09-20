@@ -1,68 +1,68 @@
 .button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: auto;
+  -webkit-tap-highlight-color: transparent; /* Remove blue flash on mobile */
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  .icon {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+}
+
+.button:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.button:active {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .button {
     background-color: transparent;
     border: none;
     outline: none;
     height: auto;
     -webkit-tap-highlight-color: transparent; /* Remove blue flash on mobile */
-}
+  }
 
-.icon {
-    width: 40px;
-    height: 40px;
+  .icon {
+    width: 35px;
+    height: 35px;
     transition: all 0.3s ease;
-}
+  }
 
-.button:hover {
+  .button:hover {
     background-color: transparent;
     outline: none;
     border: none;
 
     .icon {
-        transform: scale(1.1);
-        transition: all 0.3s ease;
+      transform: scale(1);
     }
-}
+  }
 
-.button:focus {
+  .button:focus {
     background-color: transparent;
     border: none;
     outline: none;
-}
-
-.button:active {
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-@media screen and (max-width: 768px) {
-    .button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        height: auto;
-        -webkit-tap-highlight-color: transparent; /* Remove blue flash on mobile */
-    }
-
-    .icon {
-        width: 35px;
-        height: 35px;
-        transition: all 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: transparent;
-        outline: none;
-        border: none;
-
-        .icon {
-            transform: scale(1.0);
-        }
-    }
-
-    .button:focus {
-        background-color: transparent;
-        border: none;
-        outline: none;
-    }
+  }
 }

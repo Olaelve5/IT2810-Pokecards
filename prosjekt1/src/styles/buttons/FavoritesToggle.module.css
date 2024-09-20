@@ -1,39 +1,39 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 .container > button {
-    width: 58.5rem;
-    padding: 0.6rem 0;
-    border: none;
-    cursor: pointer;
-    color: #14212d;
-    background-color: rgb(255, 213, 0);
-    font-size: 16px;
-    font-weight: 600;
+  width: 58.5rem;
+  padding: 0.6rem 0;
+  border: none;
+  cursor: pointer;
+  color: #14212d;
+  background-color: rgb(255, 213, 0);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .container > button:hover {
-    background-color: rgb(255, 213, 0, 0.8);
+  background-color: rgb(255, 213, 0, 0.8);
 }
 
 @media screen and (max-width: 1200px) {
-    .container > button {
-        width: 100%;
-    }
+  .container > button {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .container > button {
-        padding: 0.5rem 0;
-        font-size: 14px;
-    }
+  .container > button {
+    padding: 0.5rem 0;
+    font-size: 14px;
+  }
 
-    .container > button:hover {
-        background-color: rgb(255, 213, 0);
-    }
+  .container > button:hover {
+    background-color: rgb(255, 213, 0);
+  }
 }

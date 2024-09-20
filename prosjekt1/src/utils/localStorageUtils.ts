@@ -12,7 +12,7 @@ export const getFavoritePokemonsByPage = (page: number, pageSize: number): Pokem
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   return favorites.slice(start, end);
-}
+};
 
 export const addFavoritePokemon = (pokemon: PokemonType): void => {
   const favorites = getFavoritePokemons();
@@ -48,12 +48,11 @@ interface Filters {
 }
 
 export const saveFiltersToLocalStorage = (filters: Filters): void => {
-    localStorage.setItem('filters', JSON.stringify(filters));
-};  
+  localStorage.setItem('filters', JSON.stringify(filters));
+};
 
 export const getFiltersFromLocalStorage = (): Filters => {
-    const filters = localStorage.getItem('filters');
-    const defaultFilters = {type: '', name: '', orderBy: 'number', sortDirection: 'asc'};
-    return filters ? JSON.parse(filters) : defaultFilters;
-}
-
+  const filters = localStorage.getItem('filters');
+  const defaultFilters = { type: '', name: '', orderBy: 'number', sortDirection: 'asc' };
+  return filters ? JSON.parse(filters) : defaultFilters;
+};

@@ -5,7 +5,7 @@ const url = 'https://api.pokemontcg.io/v2/cards?q=';
 const set = 'set.id:ex6';
 
 export const fetchPokemonByName = async ({ queryKey }: { queryKey: string[] }): Promise<PokemonType> => {
-  const query =  set + 'name:' + queryKey + '&pageSize=1';
+  const query = set + 'name:' + queryKey + '&pageSize=1';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -18,7 +18,7 @@ export const fetchPokemonByName = async ({ queryKey }: { queryKey: string[] }): 
 };
 
 export const fetchPokemonByNumber = async ({ queryKey }: { queryKey: number[] }): Promise<PokemonType> => {
-  const query =set + ' number:' + queryKey.toString() + '&pageSize=1';
+  const query = set + ' number:' + queryKey.toString() + '&pageSize=1';
   const res = await fetch(url + query, {
     headers: {
       'X-Api-Key': ApiKey,
@@ -30,7 +30,6 @@ export const fetchPokemonByNumber = async ({ queryKey }: { queryKey: number[] })
   return { name, number, types, images };
 };
 
-
 interface FetchPokemonsBySearch {
   pokemons: PokemonType[];
   count: number;
@@ -40,7 +39,7 @@ export const fetchPokemonsBySearch = async ({ queryKey }: { queryKey: string[] }
   const [filters, pageQuery, orderBy, sortDirection] = queryKey;
   let sortPrefix = sortDirection === 'asc' ? '' : '-';
 
-  if(orderBy === 'Name') {
+  if (orderBy === 'Name') {
     sortPrefix = sortDirection === 'asc' ? '-' : '';
   }
 

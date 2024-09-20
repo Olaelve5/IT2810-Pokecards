@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Row from './Row';
 import { PokemonType } from '../../types/Pokemon';
 import { useDataContext } from '../../contexts/DataContext';
@@ -13,12 +13,15 @@ const MainTable = () => {
 
   return (
     <div className={classes.tableContainer}>
-      <MainFilter page={page} setPage={setPage} setTotalPokemonCount={setTotalPokemonCount}/>
-      <FavoritesToggle page={page} setPage={setPage} totalPokemonCount={totalPokemonCount} setTotalPokemonCount={setTotalPokemonCount}/>
+      <MainFilter page={page} setPage={setPage} setTotalPokemonCount={setTotalPokemonCount} />
+      <FavoritesToggle
+        page={page}
+        setPage={setPage}
+        totalPokemonCount={totalPokemonCount}
+        setTotalPokemonCount={setTotalPokemonCount}
+      />
       <div className={classes.grid}>
-        {tablePokemons && tablePokemons.length === 0 && (
-          <div className={classes.noResults}>No pokemon found</div>
-        )}
+        {tablePokemons && tablePokemons.length === 0 && <div className={classes.noResults}>No pokemon found</div>}
 
         {tablePokemons?.map((pokemon: PokemonType) => (
           <div key={pokemon.number} className={classes.cell}>
@@ -26,7 +29,7 @@ const MainTable = () => {
           </div>
         ))}
       </div>
-      <PageButtons page={page} setPage={setPage} totalPokemonCount={totalPokemonCount}/>
+      <PageButtons page={page} setPage={setPage} totalPokemonCount={totalPokemonCount} />
     </div>
   );
 };
